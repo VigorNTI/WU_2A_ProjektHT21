@@ -1,41 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 	<meta charset="UTF-8">
-	<title>Restaurant Ćevapi</title>
+	<title>Ćevapi store</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 	
 	</style>
-	<script src=""></script>
 	<body>
-		<section>
-			<header>
-				<p>Logo</p>
-				<menu>
-					<h3>Boka</h3>
-					<h3>Avboka</h3>
-					<h3>Äta</h3>
-				</menu>
-			</header>
-			<main>
+		<nav id="navbar" class="activatable">
+			<img src="img/logo.png">
+			<ul id="header_menu">
+				<li><a href="#start_section">Start</a></li>
+				<li><a id="book_btn" href="/boka-bord/">Boka bord</a></li>
+				<li><a href="#menu_section">Meny</a></li>
+				<li><a href="#contact_section">Kontakt</a></li>
+			</ul>
+		</nav>
+		<main id="main_section">
+			<section id="start_section">
+				<div style="text-align: center;">
+					<div>
+						<img src="img/logo.png">
+					</div>
+					<ul>
+						<li><a id="book_btn" href="/boka-bord/">Boka bord</a></li>
+						<li><a href="#menu_section">Meny</a></li>
+						<li><a href="#contact_section">Kontakt</a></li>
+					</ul>
+				</div>
+			</section>
+			<section id="menu_section">
 				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
 	tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
 	vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
 	no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-			</main>
-		</section>
-
-
-<!--		<div class="">
-			<h1>Meny</h1>
-			<p>Kött.</p>
-			<p>Kött.</p>
-			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
-vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-		</div>-->
-
+			</section>
+		</main>
 	</body>
+	<script>
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		anchor.addEventListener('click', function (e) {
+			e.preventDefault();
+
+			document.querySelector(this.getAttribute('href')).scrollIntoView({
+				behavior: 'smooth'
+			});
+		});
+	});
+
+	// When the user scrolls the page, execute myFunction
+	document.getElementById("main_section").onscroll = function() {activateHeader()};
+
+	// Get the header
+	var navbar = document.getElementById("navbar");
+
+	// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+	function activateHeader() {
+		var rect = document.getElementById("main_section").getElementsByTagName("section")[0].getBoundingClientRect();
+		if (rect.top < 0) {
+			navbar.classList.add("active");
+		} else {
+			navbar.classList.remove("active");
+		}
+	}
+	</script>
+
 </html>
