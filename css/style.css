@@ -100,9 +100,10 @@ body {
 	/*background-color: #610311;*/
 }
 #navbar img {
-	height: 100%;
+	height: 80%;
 	width: auto;
-	background-color: #cdcdcd;
+	/*background-color: #cdcdcd;*/
+	padding: 0.5rem;
 }
 /* Children of header menu */
 #header_menu {
