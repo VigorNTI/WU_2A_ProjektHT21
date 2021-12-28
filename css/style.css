@@ -43,6 +43,9 @@ a {
 	-o-transition: all .5s ease;
 	transition: all .5s ease;
 }
+a:hover {
+	background-color: #3a010a !important;
+}
 body, html {
 	width: 100vw;
 	height: 100vh;
@@ -75,7 +78,7 @@ body {
 	opacity: 100%;
 }
 #navbar {
-	background-color: #333;
+	background-color: #151515;
 	/*background-color: #cdcdcd;*/
 	height: 75px;
 	width: 100%;
@@ -159,6 +162,47 @@ body {
 #start_section ul > li > a {
     background-color: #610311;
 }
+
+
+/* Menu section */
+#menu_section {
+	background-color: #610311;
+}
+#menu_section > div {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+#menu_section h1 {
+	font-size: 3rem;
+	font-weight: 900;
+}
+#menu_section h3, #menu_section h3 * {
+	font-size: 1.5rem;
+	font-weight: 900;
+}
+#menu_section p {
+	font-size: 0.8rem;
+	font-weight: 900;
+}
+#menu_section ul {
+	width: 50vw;
+	border: solid black;
+	border-width: 3px 0 0 0;
+	padding-top: 6px;
+	border-style: dashed;
+}
+#menu_section ul > li > h3 {
+	margin-top: 0.8rem;
+}
+#menu_section ul > li > p {
+	margin-top: -0.1rem;
+	margin-bottom: 0.2rem;
+}
+#menu_section ul > li > h3 em {
+	float: right;
+}
+
 
 section footer {
 	height: 10vh;
