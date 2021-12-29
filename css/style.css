@@ -167,6 +167,7 @@ body {
 /* Menu section */
 #menu_section {
 	background-color: #610311;
+	height: 70rem !important;
 }
 #menu_section > div {
 	display: flex;
