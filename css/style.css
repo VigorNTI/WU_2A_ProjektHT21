@@ -1,4 +1,4 @@
-/* Hide scrollbar for Chrome, Safari and Opera */
+r* Hide scrollbar for Chrome, Safari and Opera */
 *::-webkit-scrollbar {
   display: none;
 }
@@ -14,7 +14,6 @@
 	padding: 0;
 	font-weight: 900;
     	font-size: 1rem;
-	text-transform: uppercase;
 	font-family: muli, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -246,14 +245,52 @@ body {
 	height: auto !important;
 	display: grid !important;
 	grid-template-columns: 50% 50%;
-	grid-template-rows: 100%;
+	grid-template-rows: 1.5rem auto 1.5rem;
 	grid-template-areas:
-	"text maps";
+	". ."
+	"text maps"
+	". .";
 }
-#start_section > *:first-child {
+#about_section > ul {
 	grid-area: text;
+	list-style-type: none;
 }
-#start_section > *:last-child {
+#about_section > ul > li {
+	width: 100%;
+	padding-top: 0.8rem;
+	padding-bottom: 0.8rem;
+}
+#about_section > ul * {
+	width: 100%;
+	text-align: center;
+}
+#about_section > ul > li > h1 {
+	font-size: 1.3rem;
+}
+#about_section > ul > li > p {
+	font-size: 1rem;
+	display: inline-block;
+}
+/* For styling the mail dot and phone number */
+#about_section > ul > li:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+	grid-template-rows: auto;
+	grid-template-areas: "mail dot phone";
+	grid-gap: 1.5rem;
+}
+#mail_p {
+	grid-area: mail;
+	text-align: right !important;
+}
+#dot_p {
+	grid-area: dot;
+}
+#phone_p {
+	grid-area: phone;
+	text-align: left !important;
+}
+#about_section > iframe {
 	grid-area: maps;
 }
 
