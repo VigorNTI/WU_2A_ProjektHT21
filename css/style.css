@@ -1,4 +1,4 @@
-r* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar for Chrome, Safari and Opera */
 *::-webkit-scrollbar {
   display: none;
 }
@@ -42,7 +42,7 @@ a {
 	-o-transition: all .5s ease;
 	transition: all .5s ease;
 }
-a:hover {
+a:hover:not(.inactive_a) {
 	background-color: #3a010a !important;
 }
 body, html {
@@ -137,6 +137,9 @@ body {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+}
+#main_section > section.spacing {
+	height: 40vw !important;
 }
 /* start section */
 #start_section {
@@ -267,9 +270,11 @@ body {
 #about_section > ul > li > h1 {
 	font-size: 1.3rem;
 }
-#about_section > ul > li > p {
+#about_section > ul > li > p, #about_section > ul > li > a {
 	font-size: 1rem;
 	display: inline-block;
+	padding: 0;
+	margin-bottom: 0; /* We need to overide previous declaration */
 }
 /* For styling the mail dot and phone number */
 #about_section > ul > li:nth-child(2) {
@@ -279,14 +284,14 @@ body {
 	grid-template-areas: "mail dot phone";
 	grid-gap: 1.5rem;
 }
-#mail_p {
+#mail_a {
 	grid-area: mail;
 	text-align: right !important;
 }
 #dot_p {
 	grid-area: dot;
 }
-#phone_p {
+#phone_a {
 	grid-area: phone;
 	text-align: left !important;
 }
