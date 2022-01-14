@@ -66,6 +66,59 @@ body {
 	color: #fff;
 	background-color: #1b1b1b;
 }
+#navbar {
+	background-color: #151515;
+	/*background-color: #cdcdcd;*/
+	height: 75px;
+	width: 100%;
+	
+	/* Make header fixed on scroll */
+	position: fixed;
+	top: 0;
+    	z-index: 20;
+
+	/* justify content*/
+	display: flex;
+	align-items: center;
+
+	/* Set animation transition */
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+#navbar > * {
+	/*background-color: #610311;*/
+}
+#navbar img {
+	height: 80%;
+	width: auto;
+	/*background-color: #cdcdcd;*/
+	padding: 0.5rem;
+}
+/* Children of header menu */
+#header_menu {
+	width: 100%;
+	height: 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+#header_menu > li {
+	margin-left: 1rem;
+	margin-right: 1rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+#header_menu > li:last-child {
+    border: 0;
+    display: inline-block;
+    line-height: 0;
+}
+#header_menu > li:last-child > a {
+    background-color: #610311;
+}
 #main_section {
 	height: 100%;
 	overflow: auto;
@@ -81,6 +134,38 @@ body {
 }
 #main_section > section.spacing {
 	height: 40vw !important;
+}
+#book-section {
+	padding: 2rem;
+}
+#book-section > *:first-child {
+	margin-top: 75px; /* height of header */
+}
+#book_form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	background-color: #000000aa;
+	padding: 2rem;
+	border-radius: 5px;
+}
+#book_form label {
+	font-size: 1.3rem;
+	font-weight: 900;
+}
+#book_form label:not(:first-child), #submit_btn {
+	margin-top: 2rem;
+}
+#book_form *:not(label):not(span) {
+	padding: 0.8rem;
+	border-radius: 5px;
+}
+#note_area {
+	resize: vertical;
+	min-height: 1rem;
+	max-height: 10rem; /* 10 rows since 1 row is 1 rem(font-size: 1rem) */
+	font-size: 1rem;
 }
 
 section footer {

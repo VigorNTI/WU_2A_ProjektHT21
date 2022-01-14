@@ -8,16 +8,40 @@
 	
 	</style>
 	<body>
+		<nav id="navbar" class="activatable">
+			<img src="../img/logo_v3.png">
+			<ul id="header_menu">
+				<li><a href="javascript: history.back();">Tillbaka</a></li>
+			</ul>
+		</nav>
 		<main id="main_section">
 			<section id="book-section">
-				<div style="text-align: center;">
-					<div>
-						<img src="../img/logo_v3.png">
-					</div>
-				</div>
-				<div>
-					<a href="#menu_section"></a>
-				</div>
+				<form id="book_form">
+					<label for="name_input">
+						För och efternamn:
+					</label>
+					<input type="text" name="name" id="name_input" placeholder="Namn Namnsson">
+					<label for="tel_input">
+						Telefon nummer:
+					</label>
+					<input type="phone" name="phone" id="tel_input">
+					<label for="guests_input">
+						Antal gäster:
+					</label>
+					<input type="number" name="guests" id="guests_input">
+					<label>
+						Datum och tid:
+					</label>
+					<span id="datetime_span">
+						<input type="date" name="date" id="data_input">
+						<input min="09:00" max="18:00" type="time" name="time" id="time_input">
+					</span>
+					<label for="note_area">
+						Något du vill tillägga?
+					</label>
+					<textarea oninput="auto_grow(this)" id="note_area" name="note"></textarea>
+					<input type="submit" id="submit_btn" value="Boka Nu!">
+				</form>
 			</section>
 		</main>
 	</body>
@@ -31,6 +55,11 @@
 			});
 		});
 	});
+	function auto_grow(element) {
+		element.style.height = "1rem";
+		console.log(element.scrollHeight);
+		element.style.height = (element.scrollHeight)+"px";
+	}
 
 	</script>
 
